@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg2"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="342dp"
+        android:gravity="bottom|center">
+
+        <EditText
+            android:id="@+id/ed1"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ip Address"
+            android:inputType="textPersonName" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:gravity="center|center_vertical">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET IP" />
+    </TableRow>
+
+
+</android.widget.LinearLayout>

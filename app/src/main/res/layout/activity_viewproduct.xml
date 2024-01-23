@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".viewproduct">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Cost : "
+            android:textSize="20dp"
+            android:textColor="#008000"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="TextView" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+    </TableRow>
+
+    <ListView
+        android:id="@+id/li"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </ListView>
+
+</android.widget.LinearLayout>
