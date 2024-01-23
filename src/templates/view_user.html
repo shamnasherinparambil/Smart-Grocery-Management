@@ -1,0 +1,40 @@
+{% extends 'adindex.html' %}
+{% block body %}
+<body>
+<style>
+    body{
+        background-image: url("/static/media/gg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="">
+<h1 align="center" style="color: red">View All Users</h1>
+  <table width="500" height="500" align="center" border="1">
+    <tr style="color: #721c24">
+      <td>Sl No</td>
+      <td>Name</td>
+      <td>Phone Number</td>
+      <td>Place</td>
+      <!--<td>Gender</td>-->
+      <td>Postal Code</td>
+      <td>Email</td>
+      <!--<td>Store Location</td>-->
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>&nbsp;{{ i['phone'] }}</td>
+      <td>&nbsp;{{ i['place'] }}</td>
+      <!--<td>&nbsp;{{ i['gender'] }}</td>-->
+      <td>&nbsp;{{ i['post_code'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <!--<td>&nbsp;{{ i['store_location'] }}</td>-->
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

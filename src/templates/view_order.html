@@ -1,0 +1,44 @@
+{% extends 'adindex.html' %}
+{% block body %}
+<body>
+<style>
+    body{
+        background-image: url("/static/media/gg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="">
+<h1 align="center" style="color: red">View Order And Verify Users Order</h1>
+  <table width="600" height="100" align="center" border="1">
+    <tr  style="color: #721c24">
+      <td>Sl No</td>
+      <td>Username</td>
+      <td>Product Name</td>
+      <td>Order Date</td>
+      <td>Quantity</td>
+      <td>Total Amount</td>
+      <td>Status</td>
+       <td>Delivery status</td>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>&nbsp;{{ i['product_name'] }}</td>
+      <!--<td>&nbsp;{{ i['order_date'] }}</td>-->
+      <td>{{ i['date'] }}</td>
+      <td>{{ i['quantity'] }}</td>
+      <!--<td>&nbsp;{{ i['total_amount'] }}</td>-->
+      <td>{{ i['price'] }}</td>
+      <td>{{ i['status'] }}</td>
+       <td><a href="/delivery_status/{{ i['id'] }}">Yes</a> </td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

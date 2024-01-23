@@ -1,0 +1,32 @@
+{% extends 'adindex.html' %}
+{% block body %}
+<body>
+<style>
+    body{
+        background-image: url("/static/media/gg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="">
+  <table width="300" height="100" align="center" border="1">
+  <h1 align="center" style="color: red">View Quality Of Products</h1>
+    <tr  style="color: #721c24">
+      <td>Sl No</td>
+      <td>Product Name</td>
+      <td>Quality</td>
+      <td>Status</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['product_name'] }}</td>
+      <td>&nbsp;{{ i['quality'] }}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

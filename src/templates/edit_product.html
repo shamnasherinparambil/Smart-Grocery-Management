@@ -1,0 +1,53 @@
+{% extends 'adindex.html' %}
+{% block body %}
+
+<body>
+<style>
+    body{
+        background-image: url("/static/media/gg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="/edit_product_post" enctype="multipart/form-data">
+  <table width="300" height="300" align="center">
+      <h1 align="center" style="color: red">Update The Details</h1>
+       <input type="hidden" name="pid" value="{{ data['id'] }}"/>
+    <tr>
+      <td>Product Name</td>
+      <td><label for="t2"></label>
+      <input type="text" name="t1" id="t2" placeholder="Product Name" required value="{{ data['product_name'] }}"/></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td><label for="s1"></label>
+        <select name="s1" id="s1" value="{{ data['type'] }}">
+            <option value="fruit">Fruit</option>
+            <option value="veg">Vegitable</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><label for="t3"></label>
+      <input type="text" name="t2" id="t3" placeholder="Price" required value="{{ data['price'] }}" /></td>
+    </tr>
+ <tr>
+       <td  style="color: #721c24">Recipies</td>
+      <td><label for="t3"></label>
+      <textarea name="re" placeholder="enter your Recipe">
+{{data['Recipies']}}
+      </textarea></td>
+    </tr>
+       <tr>
+      <td  style="color: #721c24">Image</td>
+      <td><label for="filefield"></label>
+      <input type="file" name="file" id="filefield"  value="{{ data['photo'] }}"/></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="bt" id="bt" value="Submit" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

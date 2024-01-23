@@ -1,0 +1,42 @@
+{% extends 'adindex.html' %}
+{% block body %}
+<body>
+<style>
+    body{
+        background-image: url("/static/media/gg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="">
+<h1 align="center" style="color: red">View All Product</h1>
+  <table width="500" height="500" align="center" border="1">
+    <tr  style="color: #721c24">
+    <td>Sl No</td>
+      <td>Product Name</td>
+        <td>Photo</td>
+      <td>Type</td>
+      <td>Price</td>
+      <td>Recipies</td>
+      <td>Quantity</td>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['product_name'] }}</td>
+        <td><img src="/static/media/{{ i['Photo'] }}" height="200px" width="150px" ></td>
+      <td>&nbsp;{{ i['type'] }}</td>
+      <td>&nbsp;{{ i['price'] }}</td>
+      <td>{{i['Recipies']}}</td>
+      <td>&nbsp;{{ i['quantity'] }}</td>
+
+    <td><a href="/edit_product/{{ i['id'] }}">Edit</a> </td>
+    <td><a href="/del_product/{{ i['id'] }}">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
